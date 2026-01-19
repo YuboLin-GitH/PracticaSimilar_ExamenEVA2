@@ -1,5 +1,6 @@
 package com.yubo.practicasimilar_exameneva2.service;
 
+import com.yubo.practicasimilar_exameneva2.model.Compania;
 import com.yubo.practicasimilar_exameneva2.repository.CompaniaRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,5 +11,9 @@ public class CompaniaServices {
     public CompaniaServices(CompaniaRepository companiaRepository) {
         this.companiaRepository = companiaRepository;
     } // CONSTRUCTOR PARA AÑADIR EL REPOSITORIO COMPAÑIA EN EL SERVICIO
+
+
+    public Compania saveCompania(Compania compania) { return companiaRepository.save(compania); }
+
 
 }
