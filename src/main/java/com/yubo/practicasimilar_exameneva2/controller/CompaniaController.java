@@ -38,12 +38,13 @@ public class CompaniaController {
     }
 
     */
-    public ResponseEntity<?> createHotel(@RequestBody Compania compania) {
+    public ResponseEntity<?> createCompania(@RequestBody CompaniaNombreDTO dto) {
         try {
             // se vuelve datos que has creado
-            Compania companiaGuardado = companiaServices.saveCompania(compania);
+            Compania compania = new Compania();
+            compania.setNombrecompania(dto.getNombrecompania());
             //  CREADO (si se guardó correctamente)
-            return new ResponseEntity<>(companiaGuardado, HttpStatus.CREATED);
+            return new ResponseEntity<>(companiaServices.saveCompania(compania), HttpStatus.CREATED);
         } catch (Exception e) {
             // SI HAY UN ERROR AL GUARDAR EL HOTEL, SE DEVUELVE UN MENSAJE DE ERROR
             return new ResponseEntity<>("Error al guardar la compañía: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
