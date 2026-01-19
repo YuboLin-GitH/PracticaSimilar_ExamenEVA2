@@ -50,8 +50,10 @@ public class PracticaSimilarExamenEva2Application {
                     .antMatchers(HttpMethod.POST, "/user").permitAll()//antMatchers OBSOLETO
                     //.requestMatchers(HttpMethod.POST, "/user").permitAll()
                     .antMatchers(AUTH_WHITELIST).permitAll()
-                    .antMatchers("/categorias/**").permitAll()
-
+                    .antMatchers(HttpMethod.GET, "/api/vuelo/").permitAll()
+                    .antMatchers(HttpMethod.GET, "/api/vuelo/buscarvuelos").permitAll()
+                    .antMatchers(HttpMethod.GET, "/api/vuelo/buscardestinoprecio").permitAll()
+                    .antMatchers(HttpMethod.GET, "/api/vuelo/numeroVuelosOrigen").permitAll()
                     .anyRequest().authenticated();//cualquier solicitud debe ser autenticada, de lo contrario, mi aplicación Spring devolverá una respuesta 401.
 
 			/*
