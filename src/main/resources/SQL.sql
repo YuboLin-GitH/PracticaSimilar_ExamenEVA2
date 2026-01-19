@@ -4,7 +4,7 @@ USE GestionVuelos;
 --   CREACIÓN DE LAS TABLAS COMPAÑIAS :
 
 CREATE TABLE Compañias
-( idcompañia INTEGER PRIMARY KEY,
+( idcompañia INTEGER PRIMARY KEY AUTO_INCREMENT,
   nombrecompañia VARCHAR(50)
 );
 
