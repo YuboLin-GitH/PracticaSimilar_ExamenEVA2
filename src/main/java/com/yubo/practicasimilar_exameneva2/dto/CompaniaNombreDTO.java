@@ -4,18 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsuarioDto {
-
-
-    private String username;
-    private String token;
-
-
-
+public class CompaniaNombreDTO {
+    private String nombrecompania;
 }

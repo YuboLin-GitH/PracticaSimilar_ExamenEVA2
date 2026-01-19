@@ -47,7 +47,7 @@ public class PracticaSimilarExamenEva2Application {
             http.csrf().disable()
                     .addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
                     .authorizeRequests()
-                    .antMatchers(HttpMethod.POST, "/user").permitAll()//antMatchers OBSOLETO
+                    .antMatchers(HttpMethod.POST, "/api/usuario/login").permitAll()//antMatchers OBSOLETO
                     //.requestMatchers(HttpMethod.POST, "/user").permitAll()
                     .antMatchers(AUTH_WHITELIST).permitAll()
                     .antMatchers(HttpMethod.GET, "/api/vuelo/").permitAll()
