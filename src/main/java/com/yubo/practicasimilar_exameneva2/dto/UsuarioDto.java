@@ -1,21 +1,27 @@
 package com.yubo.practicasimilar_exameneva2.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 
 
+public record UsuarioDto (
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class UsuarioDto {
+        String username,
+        String token
+){
+    @Override
+    public String username() {
+        return username;
+    }
 
-
-    private String username;
-    private String token;
-
+    @Override
+    public String token() {
+        return token;
+    }
 
 
 }
+
+
+
+
+
