@@ -17,10 +17,7 @@ public class UsuarioServices {
     public UsuarioDto login(String username, String password) {
         Usuario user = usuarioRepository.findByCredentials(username, password);
         if (user != null) {
-            UsuarioDto dto = new UsuarioDto();
-            dto.setUsername(user.getUsername());
-            // No devolvemos la contraseña por seguridad
-            return dto;
+            return new UsuarioDto(user.getUsername(), null);
         }
         return null;
     }

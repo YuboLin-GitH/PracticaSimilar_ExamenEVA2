@@ -59,10 +59,7 @@ public class UsuarioController {
 
                 String token = getJWTToken(username);
 
-
-                dbUser.setToken(token);
-
-                return new ResponseEntity<>(dbUser, HttpStatus.OK);
+                return new ResponseEntity<>(new UsuarioDto(dbUser.username(), token), HttpStatus.OK);
             } else {
                 return new ResponseEntity<>("Error de Contraseña", HttpStatus.NOT_ACCEPTABLE);
             }

@@ -31,5 +31,7 @@ public class SwaggerConfig {
                                 .name("Yubo")
                                 .email("yubo.lin@educa.jcyl.es"))
                         .version("1.0"));
+
+        // http://localhost:9000/doc/swagger-ui.html
     }
 }

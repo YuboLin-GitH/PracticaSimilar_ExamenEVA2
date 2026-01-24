@@ -42,7 +42,7 @@ public class CompaniaController {
         try {
             // se vuelve datos que has creado
             Compania compania = new Compania();
-            compania.setNombrecompania(dto.getNombrecompania());
+            compania.setNombrecompania(dto.nombrecompania());
             //  CREADO (si se guardó correctamente)
             return new ResponseEntity<>(companiaServices.saveCompania(compania), HttpStatus.CREATED);
         } catch (Exception e) {
@@ -79,7 +79,7 @@ public class CompaniaController {
     public ResponseEntity<?> update(@PathVariable int id, @RequestBody CompaniaNombreDTO dto) {
         try {
 
-            Compania actualizada = companiaServices.updateNombre(id, dto.getNombrecompania());
+            Compania actualizada = companiaServices.updateNombre(id, dto.nombrecompania());
             return ResponseEntity.ok(actualizada);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
