@@ -32,7 +32,7 @@ public class VueloServices {
     // c.	Numero de vuelos que salen desde un origen y que no tengan escalas
 
     public int numeroVuelosOrigen(String origen) {
-        return vueloRepository.findVueloByOrigen(origen);
+        return vueloRepository.countVuelosByOrigenSinEscalas(origen);
     }
 
 

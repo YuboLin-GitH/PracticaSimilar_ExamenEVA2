@@ -26,5 +26,5 @@ public interface VueloRepository  extends JpaRepository<Vuelo, String> {
 
     // c.	Numero de vuelos que salen desde un origen y que no tengan escalas
     @Query("select COUNT(v) from Vuelo v where v.origen = :origen AND v.numeroescalas = 0")
-    int findVueloByOrigen(@Param("origen") String origen);
+    int countVuelosByOrigenSinEscalas(@Param("origen") String origen);
 }

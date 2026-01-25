@@ -39,7 +39,7 @@ public class VueloController {
     @GetMapping("/buscarvuelos")
     public ResponseEntity<?> getVueloPorODE(@RequestParam String origen, @RequestParam String destino, @RequestParam int numeroescalas){
         try {
-            // SE LLAMA AL SERVICIO PARA OBTENER TODOS LOS VUELOS SEGUN LOS FILTROS
+            // SE LLAMA AL SERVICIO PARA OBTENER TODOS LOS VUELOS SEGÚN LOS FILTROS
             List<Vuelo> vuelos = vueloServices.buscarVuelos(origen, destino, numeroescalas);
             System.out.printf(vuelos.toString());
             if (vuelos.isEmpty()) {
